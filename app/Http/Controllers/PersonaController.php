@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Persona;
+use App\Http\Requests\PersonaRequest;
+
 
 class PersonaController extends Controller
 {
@@ -12,7 +14,7 @@ class PersonaController extends Controller
         return view('personas.create');
     }
 
-    public function store(Request $request)
+    public function store(PersonaRequest $request)
     {
         $request->validate([
             'cperApellido' => 'required|string|max:255',
